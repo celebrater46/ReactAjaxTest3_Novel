@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-function MyComponent() {
+const TestAjax = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
@@ -9,7 +9,8 @@ function MyComponent() {
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-        fetch("https://api.example.com/items")
+        // fetch("https://api.example.com/items")
+        fetch("https://localhost/myapps/PhpCsTest2/index.php")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -41,4 +42,18 @@ function MyComponent() {
             </ul>
         );
     }
+
+    // return (
+    //     <ul>
+    //         {items.map(item => (
+    //             <li key={item.id}>
+    //                 {item.name} {item.price}
+    //             </li>
+    //         ))}
+    //         <li>Hello World.</li>
+    //         {/*<li>Hello World.</li>*/}
+    //     </ul>
+    // );
 }
+
+export default TestAjax;

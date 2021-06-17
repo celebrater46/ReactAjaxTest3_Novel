@@ -8,18 +8,12 @@ const TestAjax = () => {
     const convertItems = (result) => {
         let array = [];
         for(let i = 0; i < result["items"].length; i++) {
-            array.push(<li key={result["items"][i]["id"]}>{result["items"][i]["name"]} {result["items"][i]["price"]}</li>);
-            // array.push(<li>{result["items"][i]["name"]}</li>);
-            console.log("Hello World from for");
+            array.push(
+                <li key={result["items"][i]["id"]}>
+                    {result["items"][i]["name"]} {result["items"][i]["price"]}
+                </li>
+            );
         }
-        console.log("Hello World after for");
-        // console.log("array: ");
-        // console.log(array);
-        // console.log("result: ");
-        // console.log(result);
-        // console.log("result[\"items\"][0].id: " + result["items"][0]["id"]);
-        // console.log("result[\"items\"][0].name: " + result["items"][0]["name"]);
-        // console.log("result[\"items\"][0].price: " + result["items"][0]["price"]);
         return array;
     }
 
@@ -47,10 +41,6 @@ const TestAjax = () => {
                     setError(error);
                 }
             )
-            // .then( res => {
-            //     setItems(res);
-            //     console.log(items);
-            // })
     }, [])
 
     if (error) {
@@ -62,40 +52,10 @@ const TestAjax = () => {
         console.log(items);
         return (
             <ul>
-                {/*{items.map(item => (*/}
-                {/*    <li key={item.id}>*/}
-                {/*        {item.name} {item.price}*/}
-                {/*    </li>*/}
-                {/*))}*/}
-                {/*{items.map(item => (*/}
-                {/*    <li>*/}
-                {/*        Hello World.*/}
-                {/*    </li>*/}
-                {/*))}*/}
-                {/*{(() => {*/}
-                {/*    items.map(item => (*/}
-                {/*        <li key={item.id}>*/}
-                {/*            {item.name} {item.price}*/}
-                {/*        </li>*/}
-                {/*    ))*/}
-                {/*})()}*/}
                 { items }
-                <li>Hello World</li>
             </ul>
         );
     }
-
-    // return (
-    //     <ul>
-    //         {items.map(item => (
-    //             <li key={item.id}>
-    //                 {item.name} {item.price}
-    //             </li>
-    //         ))}
-    //         <li>Hello World.</li>
-    //         {/*<li>Hello World.</li>*/}
-    //     </ul>
-    // );
 }
 
 export default TestAjax;

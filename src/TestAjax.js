@@ -23,20 +23,16 @@ const TestAjax = () => {
     // this useEffect will run once
     // similar to componentDidMount()
     useEffect(() => {
-        // fetch("https://api.example.com/items")
-        // fetch("https://localhost/myapps/PhpCsTest2/index.php")
-        // fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
-        // fetch("http://localhost/myapps/ajax_test2/index.php")
         fetch("http://localhost/myapps/ajax_test3_novel_server/index.php")
             .then(res => res.json())
             .then(
                 (result) => {
                     setIsLoaded(true);
-                    // setItems(result);
                     setItems(convertItems(result));
                     console.log("convertItems(result):");
                     console.log(convertItems(result));
                 },
+
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
@@ -59,8 +55,8 @@ const TestAjax = () => {
     } else if (!isLoaded) {
         return <div>Loading...</div>;
     } else {
-        console.log("items:");
-        console.log(items);
+        // console.log("items:");
+        // console.log(items);
         return (
             <div>
                 { items }

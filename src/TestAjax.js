@@ -23,7 +23,8 @@ const TestAjax = () => {
     useEffect(() => {
         // fetch("https://api.example.com/items")
         // fetch("https://localhost/myapps/PhpCsTest2/index.php")
-        fetch("http://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
+        // fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
+        fetch("http://localhost/myapps/ajax_test2/index.php")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -36,6 +37,11 @@ const TestAjax = () => {
                 // Note: it's important to handle errors here
                 // instead of a catch() block so that we don't swallow
                 // exceptions from actual bugs in components.
+
+                // If "Failed to Fetch
+                // Maybe the cause is CORS that your browser blocks AJAX with different server
+                // Open your Chrome as developing mode
+                // Refer: https://webbibouroku.com/Blog/Article/cors-browser-setting
                 (error) => {
                     setIsLoaded(true);
                     setError(error);

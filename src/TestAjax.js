@@ -7,11 +7,13 @@ const TestAjax = () => {
 
     const convertItems = (result) => {
         let array = [];
-        for(let i = 0; i < result["items"].length; i++) {
+        console.log("result: ");
+        console.log(result);
+        for(let i = 0; i < result.length; i++) {
             array.push(
-                <li key={result["items"][i]["id"]}>
-                    {result["items"][i]["name"]} {result["items"][i]["price"]}
-                </li>
+                <p key={i}>
+                    { result[i] }
+                </p>
             );
         }
         return array;
@@ -23,8 +25,9 @@ const TestAjax = () => {
     useEffect(() => {
         // fetch("https://api.example.com/items")
         // fetch("https://localhost/myapps/PhpCsTest2/index.php")
-        fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
+        // fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
         // fetch("http://localhost/myapps/ajax_test2/index.php")
+        fetch("http://localhost/myapps/ajax_test3_novel_server/index.php")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -59,9 +62,9 @@ const TestAjax = () => {
         console.log("items:");
         console.log(items);
         return (
-            <ul>
+            <div>
                 { items }
-            </ul>
+            </div>
         );
     }
 }

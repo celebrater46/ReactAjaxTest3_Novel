@@ -23,8 +23,8 @@ const TestAjax = () => {
     useEffect(() => {
         // fetch("https://api.example.com/items")
         // fetch("https://localhost/myapps/PhpCsTest2/index.php")
-        // fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
-        fetch("http://localhost/myapps/ajax_test2/index.php")
+        fetch("https://enin-world.sakura.ne.jp/test_php/ajaxtest/index.php")
+        // fetch("http://localhost/myapps/ajax_test2/index.php")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -42,6 +42,8 @@ const TestAjax = () => {
                 // Maybe the cause is CORS that your browser blocks AJAX with different server
                 // Open your Chrome as developing mode
                 // Refer: https://webbibouroku.com/Blog/Article/cors-browser-setting
+                // The shortcut's target: "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-web-security --user-data-dir="C:\Users\Enin\Local\Google\Chrome\User Data"
+                // The shortcut's start in: "C:\Program Files\Google\Chrome\Application"
                 (error) => {
                     setIsLoaded(true);
                     setError(error);
